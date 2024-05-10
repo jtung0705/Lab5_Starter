@@ -55,4 +55,15 @@ inputForm.onsubmit = (event) => {
   inputTxt.blur();
 };
 
+
+var buttin = document.querySelector("button");
+buttin.addEventListener('click', function(){
+var speek = document.getElementById("text-to-speak").value;
+var utterance = new SpeechSynthesisUtterance(speek);
+  speechSynthesis.speak(utterance);
+});
+
+
+
+
 }
