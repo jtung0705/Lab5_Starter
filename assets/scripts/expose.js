@@ -5,16 +5,24 @@ window.addEventListener('DOMContentLoaded', init);
 function init() {
   var imag = document.querySelector("img");
   var hornz = document.getElementById("horn-select");
+  const jsConfetti = new JSConfetti();
+  var audSrc = document.getElementsByClassName("hidden")[0];
+
   hornz.addEventListener("change", function(){
   if (document.getElementById("horn-select").value == 'air-horn' ){
       imag.src = 'assets/images/air-horn.svg';
+      audSrc.src= "assets/audio/air-horn.mp3";
   }
   else if (document.getElementById("horn-select").value == 'car-horn'){
       imag.src = 'assets/images/car-horn.svg';
+      audSrc.src = "assets/audio/car-horn.mp3";
   }
   else if (document.getElementById("horn-select").value == 'party-horn'){
       imag.src = 'assets/images/party-horn.svg';
+      audSrc.src = "assets/audio/party-horn.mp3";
+      jsConfetti.addConfetti();
     }
+
   }
 )
 
@@ -41,7 +49,11 @@ else {
 }
 )
 
+var buttin = document.querySelector("button");
+buttin.addEventListener('click', function(){
+  audio.play();
 
+});
 
 }
  
