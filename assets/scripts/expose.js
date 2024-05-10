@@ -20,21 +20,28 @@ function init() {
 
 var volumeImage = document.querySelectorAll("img")[1];
 var cheekValue = document.getElementById("volume");
+var audio = document.getElementsByClassName("hidden")[0];
 cheekValue.addEventListener("change", function(){
   if (cheekValue.value == 0 ){
     volumeImage.src = 'assets/icons/volume-level-0.svg';
+    audio.volume = cheekValue.value / 100 ;
 }
 else if (cheekValue.value < 33 && cheekValue.value >= 1 ){
   volumeImage.src = 'assets/icons/volume-level-1.svg';
+  audio.volume = cheekValue.value / 100 ;
 }
 else if (cheekValue.value < 67){
   volumeImage.src = 'assets/icons/volume-level-2.svg';
+  audio.volume = cheekValue.value / 100 ;
 }
 else {
   volumeImage.src = 'assets/icons/volume-level-3.svg';
+  audio.volume = cheekValue.value / 100 ;
   }
 }
 )
+
+
 
 }
  
